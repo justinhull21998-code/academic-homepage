@@ -33,7 +33,7 @@ export default function Hero() {
             {/* Avatar */}
             <div className="w-40 h-40 md:w-48 md:h-48 rounded-full overflow-hidden mb-6 shadow-lg">
               <img
-                src="/images/life-photo.jpg"
+                src="/images/life-photo.JPG"
                 alt="头像"
                 className="w-full h-full object-cover"
               />
