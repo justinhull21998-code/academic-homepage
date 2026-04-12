@@ -1,6 +1,6 @@
 'use client';
 
-import { GraduationCap, Award, Clock } from 'lucide-react';
+import { Award, Clock } from 'lucide-react';
 import { useLanguage } from './LanguageProvider';
 
 export default function Education() {

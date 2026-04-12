@@ -1,6 +1,6 @@
 'use client';
 
-import { Trophy, Medal, FlaskConical, Calculator } from 'lucide-react';
+import { Trophy, FlaskConical, Calculator } from 'lucide-react';
 import { useLanguage } from './LanguageProvider';
 
 const awards = [

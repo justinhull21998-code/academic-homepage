@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { ChevronDown, ChevronUp, Briefcase, TrendingDown, Minus, TrendingUp } from 'lucide-react';
+import { ChevronDown, ChevronUp, TrendingDown, Minus, TrendingUp } from 'lucide-react';
 import { useLanguage } from './LanguageProvider';
 
 const highlights = [
