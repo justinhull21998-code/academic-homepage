@@ -1,5 +1,6 @@
 'use client';
 
+import Image from 'next/image';
 import { Mail, Github } from 'lucide-react';
 import { useLanguage } from './LanguageProvider';
 
@@ -31,11 +32,14 @@ export default function Hero() {
           {/* Left Side - Profile */}
           <div className="flex flex-col items-center md:items-start text-center md:text-left">
             {/* Avatar */}
-            <div className="w-40 h-40 md:w-48 md:h-48 rounded-full overflow-hidden mb-6 shadow-lg">
-              <img
+            <div className="relative w-40 h-40 md:w-48 md:h-48 rounded-full overflow-hidden mb-6 shadow-lg">
+              <Image
                 src="/images/life-photo.JPG"
                 alt="头像"
-                className="w-full h-full object-cover"
+                fill
+                sizes="(min-width: 768px) 12rem, 10rem"
+                className="object-cover"
+                priority
               />
             </div>
 

@@ -1,10 +1,13 @@
 'use client';
 
+import Image from 'next/image';
+import { useState } from 'react';
 import { FileText, ExternalLink } from 'lucide-react';
 import { useLanguage } from './LanguageProvider';
 
 export default function Publications() {
   const { t } = useLanguage();
+  const [coverLoadFailed, setCoverLoadFailed] = useState(false);
 
   return (
     <section id="publications" className="py-20">
@@ -16,17 +19,33 @@ export default function Publications() {
         <div className="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden hover:shadow-lg transition-shadow">
           <div className="flex flex-col md:flex-row">
             {/* Paper Cover - 论文封面截图 */}
-            <div className="md:w-48 h-48 md:h-auto bg-slate-100 flex items-center justify-center shrink-0 overflow-hidden">
-              <img
-                src="/images/paper-cover.png"
-                alt="Paper Cover"
-                className="w-full h-full object-cover"
-                onError={(e) => {
-                  // 如果图片加载失败，显示占位符
-                  (e.target as HTMLImageElement).style.display = 'none';
-                  (e.target as HTMLImageElement).parentElement!.innerHTML = '<div class="flex items-center justify-center w-full h-full"><svg class="w-12 h-12 text-slate-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg></div>';
-                }}
-              />
+            <div className="relative md:w-48 h-48 md:h-auto bg-slate-100 flex items-center justify-center shrink-0 overflow-hidden">
+              {coverLoadFailed ? (
+                <div className="flex items-center justify-center w-full h-full">
+                  <svg
+                    className="w-12 h-12 text-slate-400"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                  >
+                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+                    <polyline points="14 2 14 8 20 8" />
+                    <line x1="16" y1="13" x2="8" y2="13" />
+                    <line x1="16" y1="17" x2="8" y2="17" />
+                    <polyline points="10 9 9 9 8 9" />
+                  </svg>
+                </div>
+              ) : (
+                <Image
+                  src="/images/paper-cover.png"
+                  alt="Paper Cover"
+                  fill
+                  sizes="(min-width: 768px) 12rem, 100vw"
+                  className="object-cover"
+                  onError={() => setCoverLoadFailed(true)}
+                />
+              )}
             </div>
 
             {/* Content */}

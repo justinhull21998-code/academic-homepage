@@ -1,5 +1,6 @@
 'use client';
 
+import Image from 'next/image';
 import { Award, Clock } from 'lucide-react';
 import { useLanguage } from './LanguageProvider';
 
@@ -25,13 +26,15 @@ export default function Education() {
 
             <div className="flex items-start gap-4 mb-4">
               {/* 校徽占位符 */}
-            <div className="w-16 h-16 rounded-xl overflow-hidden shrink-0 bg-white border border-slate-200">                      
-              <img                                                                                                                
-                src="/images/bjtu-logo.png"                                                                                       
-                alt="北京交通大学"          
-                className="w-full h-full object-contain"                                                                          
-              />                                                                                                                  
-            </div>  
+            <div className="relative w-16 h-16 rounded-xl overflow-hidden shrink-0 bg-white border border-slate-200">
+              <Image
+                src="/images/bjtu-logo.png"
+                alt="北京交通大学"
+                fill
+                sizes="4rem"
+                className="object-contain"
+              />
+            </div>
               <div>
                 <h3 className="font-bold text-slate-800">{t('bjtu')}</h3>
                 <p className="text-sm text-slate-500">{t('bjtuCollege')}</p>
@@ -63,13 +66,15 @@ export default function Education() {
 
             <div className="flex items-start gap-4 mb-4">
               {/* 校徽占位符 */}
-  <div className="w-16 h-16 rounded-xl overflow-hidden shrink-0 bg-white border border-slate-200">                      
-    <img                                                                                          
-      src="/images/sustech-logo.png"                                                                                    
-      alt="南方科技大学"                                                                                                
-      className="w-full h-full object-contain"                                                                          
-    />                                                                                                                  
-  </div>   
+  <div className="relative w-16 h-16 rounded-xl overflow-hidden shrink-0 bg-white border border-slate-200">
+    <Image
+      src="/images/sustech-logo.png"
+      alt="南方科技大学"
+      fill
+      sizes="4rem"
+      className="object-contain"
+    />
+  </div>
               <div>
                 <h3 className="font-bold text-slate-800">{t('sustech')}</h3>
                 <p className="text-sm text-slate-500">{t('sustechCollege')}</p>
