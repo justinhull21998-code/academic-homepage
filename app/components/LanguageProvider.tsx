@@ -7,7 +7,7 @@ type Language = 'zh' | 'en';
 interface LanguageContextType {
   language: Language;
   toggleLanguage: () => void;
-  t: (key: string) => string | Record<string, string>;
+  t: (key: string) => string;
 }
 
 const translations = {
@@ -218,9 +218,9 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
     setLanguage((prev) => (prev === 'zh' ? 'en' : 'zh'));
   };
 
-  const t = (key: string): string | Record<string, string> => {
+  const t = (key: string): string => {
     const value = translations[language][key as keyof typeof translations.zh];
-    return value || key;
+    return (value as string) || key;
   };
 
   return (
