@@ -1,7 +1,7 @@
 'use client';
 
 import Image from 'next/image';
-import { Mail, Github } from 'lucide-react';
+import { Mail, Github, BookOpen } from 'lucide-react';
 import { useLanguage } from './LanguageProvider';
 
 // B站图标组件
@@ -23,7 +23,7 @@ function DouyinIcon({ className }: { className?: string }) {
 }
 
 export default function Hero() {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
 
   return (
     <section id="hero" className="min-h-screen pt-16 flex items-center">
@@ -88,6 +88,13 @@ export default function Hero() {
                 GitHub
               </a>
             </div>
+            <a
+              href="/interview/"
+              className="mt-6 inline-flex items-center gap-2 px-5 py-3 bg-primary-600 hover:bg-primary-700 text-white rounded-xl transition-colors text-sm font-medium"
+            >
+              <BookOpen className="w-4 h-4" aria-hidden="true" />
+              {language === 'zh' ? '数析面试练习 · 452 道题' : 'Data Interview Practice · 452 Questions'}
+            </a>
           </div>
 
           {/* Right Side - About */}
