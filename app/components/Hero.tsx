@@ -93,7 +93,7 @@ export default function Hero() {
               className="mt-6 inline-flex items-center gap-2 px-5 py-3 bg-primary-600 hover:bg-primary-700 text-white rounded-xl transition-colors text-sm font-medium"
             >
               <BookOpen className="w-4 h-4" aria-hidden="true" />
-              {language === 'zh' ? '数析面试练习 · 452 道题' : 'Data Interview Practice · 452 Questions'}
+              {language === 'zh' ? '数分/数科面试练习 · 452 道题' : 'Data Interview Practice · 452 Questions'}
             </a>
           </div>
 

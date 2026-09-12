@@ -37,6 +37,6 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/bui
 
 ## 数据分析面试练习
 
-首页“数析面试练习”入口指向 `/interview/`，公开地址为 https://justinhull21998-code.github.io/interview/ 。
+首页“数分/数科面试练习”入口指向 `/interview/`，公开地址为 https://justinhull21998-code.github.io/interview/ 。
 
 题库的 HTML、CSS、JavaScript、JSON 与原图位于 `public/interview/`，构建时随个人主页一起导出。更新题库时替换这个目录，再运行原有构建与部署流程。参考答案为预先整理的静态内容，无需 API Key 或服务端。
